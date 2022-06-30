@@ -2,6 +2,11 @@
 
 Changelog:
 
+0.8.0-pre
+  - 06/30/2022:
+	  * Vendored jquery, popper and bootstrap
+		* Added a justfile
+
 0.7.0
 	- 28/05/2018:
 		* Added backup import/export feature to replace deprecated load/save
