@@ -4,4 +4,4 @@ default:
   @just --list
 
 start:
-  python3 -m http.server
+  npm run tauri dev
