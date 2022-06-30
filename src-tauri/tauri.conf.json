@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.github.jfhbrook.tinysprite",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
