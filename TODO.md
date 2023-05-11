@@ -1,11 +1,10 @@
-## save button
+## save/load to file
 
 I want to add a save button in addition to the clipboard export.
 
 There's actually already a stubbed out procedure/ui for this - search for the
-function `saveAll` and you'll see. It just needs to be dusted off, most likely.
+function `saveAll` and you'll see. I commented it out, and it's a little bit
+broken. The UI is also a little half-baked - but once it's working we can move
+it around.
 
-## load button
-
-if there's a save button, I wouldn't be surprised if there's a load button
-too.
+The deal is likely similar with a load button.
