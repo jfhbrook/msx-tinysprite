@@ -536,44 +536,16 @@ function loadMozilla(file) {
 }
 
 function saveAll() {
-	var saveMethod = eid('saveMethod').value;
-
-	if (saveMethod == 'cookie') {
-		eraseCookie("saved");
-		createCookie("saved", projectEncode(), 36500); // 100 years of pain :)
-		alert("Saved :)");
-	} else
-		if (saveMethod == 'export') {
-			exportTXT();
-		} else
-			if (saveMethod == 'dataurl') {
-				var str = projectEncode();
-				var strBase64 = btoa(str);
-				var strURL = escape(str);
-				eid('saveLink').href = 'data:application/octet-stream;' +
-					((strBase64.length < strURL.length) ? 'base64,' + strBase64 : ',' + strURL);
-			} else
-				if (saveMethod == 'mozilla') {
-					try {
-						netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-					} catch (e) {
-						alert("Can't save Project: " + e);
-						return;
-					}
-
-					var nsIFilePicker = Components.interfaces.nsIFilePicker;
-					var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-					fp.init(window, "Save Project", nsIFilePicker.modeSave);
-					fp.defaultExtension = "txt";
-					fp.appendFilter("Sprite project (.txt)", "*.txt");
-
-					var res = fp.show();
-					if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
-						saveMozilla(fp.file);
-						alert("File saved :)");
-					}
-				}
-	return false;
+  const encoded = "lol"; //projectEncode();
+  // alert("selecting path");
+  /*
+  const path = window.__TAURI__.dialog.save({
+    defaultPath: "untitled.tiny"
+  })
+  */
+  const path = "./untitled.tiny";
+  // alert("writing file");
+  window.__TAURI__.fs.writeTextFile(path, encoded);
 }
 
 function loadAll() {
