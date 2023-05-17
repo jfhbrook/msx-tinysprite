@@ -536,16 +536,17 @@ function loadMozilla(file) {
 }
 
 function saveAll() {
-  const encoded = "lol"; //projectEncode();
+  // const encoded = "lol"; //projectEncode();
   // alert("selecting path");
   /*
   const path = window.__TAURI__.dialog.save({
     defaultPath: "untitled.tiny"
   })
   */
-  const path = "./untitled.tiny";
-  // alert("writing file");
-  window.__TAURI__.fs.writeTextFile(path, encoded);
+  // const path = "./untitled.tiny";
+  alert("writing file");
+  // alert(String(window.__TAURI__))
+  // window.__TAURI__.fs.writeTextFile(path, encoded);
 }
 
 function loadAll() {

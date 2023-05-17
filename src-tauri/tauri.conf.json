@@ -1,18 +1,27 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
+    "withGlobalTauri": true,
     "beforeBuildCommand": "",
     "beforeDevCommand": "",
     "devPath": "../dist",
     "distDir": "../dist"
+
   },
   "package": {
-    "productName": "msx-tinysprite",
+    "productName": "tinysprite",
     "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "dialog": {
+        "open": true,
+        "save": true
+      },
+      "fs": {
+        "readFile": true,
+        "writeFile": true
+      }
     },
     "bundle": {
       "active": true,
@@ -29,7 +38,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.github.jfhbrook.tinysprite",
+      "identifier": "com.tauri.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -56,7 +65,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 760,
+        "height": 600,
         "resizable": true,
         "title": "tinysprite",
         "width": 800
